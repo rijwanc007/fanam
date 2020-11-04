@@ -23,10 +23,12 @@ Route::group(['middleware' => ['preventbackbutton','auth']],function() {
     Route::resource('/user','Admin\UserController');
     Route::get('user-index','Admin\UserController@index')->name('user.index');
     Route::get('user-create','Admin\UserController@create')->name('user.create');
+
     Route::resource('employee', 'EmployeeController');
     Route::get('employee-index', 'EmployeeController@index')->name('employee.index');
     Route::get('employee-create', 'EmployeeController@create')->name('employee.create');
     Route::get('employee-show-{id}', 'EmployeeController@show')->name('employee.show');
+    Route::get('employee-accounts', 'EmployeeController@accounts')->name('employee.accounts');
 
     Route::resource('grade', 'GradeController');
     Route::get('grade-index', 'GradeController@index')->name('grade.index');

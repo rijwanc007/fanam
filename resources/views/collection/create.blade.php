@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <div class="page-header" id="bannerClose"><h3 class="page-title"><span class="page-title-icon bg-gradient-primary text-white mr-2"><i class="mdi mdi-account"></i></span> Add New Sister concern Company</h3></div>
+            <div class="page-header" id="bannerClose"><h3 class="page-title"><span class="page-title-icon bg-gradient-primary text-white mr-2"><i class="mdi mdi-currency-usd"></i></span> Submit Collection</h3></div>
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
@@ -71,7 +71,7 @@
                    $('#select2').empty();
                    $('#select2').append('<option selected disabled value="">Choose An Option</option>');
                    jQuery.each( data, function( item, value ) {
-                       $('#select2').append('<option value=' + value.name + '>' + value.name + '</option>');
+                       $('#select2').append("<option value='"+ value.name + "'>" + value.name + "</option>");
                    });
                }
             });
@@ -85,6 +85,7 @@
               url : '/sister_concern_tax/' + sister_concern,
               method : 'GET',
               success:function (data){
+                  console.log(data);
                   _('tax').value = data.tax;
               }
            });

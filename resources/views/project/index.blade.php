@@ -27,62 +27,8 @@
                                                 <td>{{$project->location}}</td>
                                                 <td>{{$project->address}}</td>
                                                 <td>{{$project->larea}} sq feet</td>
-{{--                                                <td>--}}
-{{--                                                    <table class="table table-responsive">--}}
-{{--                                                        @for($i = 0 ; $i < $project->pcount/2 ; $i++)--}}
-{{--                                                        <tr>--}}
-{{--                                                            <td>--}}
-{{--                                                                @if($status[$j][$i] == "unsold")--}}
-{{--                                                                    <button type="button" class="btn btn-inverse-success" onclick="window.location='{{route('sell.create',[$project->id,$i ])}}'">{{$parea[$j][$i]}} sq feet</button>--}}
-{{--                                                                @else--}}
-{{--                                                                    <button type="button" class="btn btn-inverse-danger" data-toggle="tooltip" title="Sold!" onclick="window.location='#' ">{{$parea[$j][$i]}} sq feet</button>--}}
-{{--                                                                @endif--}}
-{{--                                                            </td>--}}
-{{--                                                        </tr>--}}
-{{--                                                        @endfor--}}
-{{--                                                    </table>--}}
-
-{{--                                                    <table>--}}
-{{--                                                            <thead>--}}
-{{--                                                            <tr>--}}
-{{--                                                                @for($i=0;$i<$project->pcount;$i++)--}}
-{{--                                                                <th class="text-center">plot area {{$i+1}}</th>--}}
-{{--                                                                @endfor--}}
-{{--                                                            </tr>--}}
-{{--                                                            </thead>--}}
-{{--                                                            <tbody>--}}
-{{--                                                            <tr>--}}
-{{--                                                                @for($i=0;$i<$project->pcount;$i++)--}}
-{{--                                                                <td >--}}
-{{--                                                                    @if($status[$j][$i] == "unsold")--}}
-{{--                                                                        <button type="button" class="btn btn-inverse-success" onclick="window.location='{{route('sell.create',[$project->id,$i ])}}'">{{$parea[$j][$i]}} sq feet</button>--}}
-{{--                                                                    @else--}}
-{{--                                                                        <button type="button" class="btn btn-inverse-danger" data-toggle="tooltip" title="Sold!" onclick="window.location='#' ">{{$parea[$j][$i]}} sq feet</button>--}}
-{{--                                                                    @endif--}}
-{{--                                                                </td>--}}
-{{--                                                                @endfor--}}
-{{--                                                            </tr>--}}
-{{--                                                            </tbody>--}}
-{{--                                                    </table>--}}
-{{--                                                </td>--}}
-{{--                                                <td>--}}
-{{--                                                    <table class="table table-responsive">--}}
-{{--                                                        @for($i = $project->pcount/2 ; $i < $project->pcount ; $i++)--}}
-{{--                                                            <tr>--}}
-{{--                                                                <td>--}}
-{{--                                                                    @if($status[$j][$i] == "unsold")--}}
-{{--                                                                        <button type="button" class="btn btn-inverse-success" onclick="window.location='{{route('sell.create',[$project->id,$i ])}}'">{{$parea[$j][$i]}} sq feet</button>--}}
-{{--                                                                    @else--}}
-{{--                                                                        <button type="button" class="btn btn-inverse-danger" data-toggle="tooltip" title="Sold!" onclick="window.location='#' ">{{$parea[$j][$i]}} sq feet</button>--}}
-{{--                                                                    @endif--}}
-{{--                                                                </td>--}}
-{{--                                                            </tr>--}}
-{{--                                                        @endfor--}}
-{{--                                                    </table>--}}
-{{--                                                </td>--}}
                                                 <td>
                                                     <button type="button" class="btn btn-inverse-primary btn-icon" onclick="window.location='{{route('project.show',$project->id)}}'"><i class="mdi mdi-eye"></i></button>
-                                                    <button type="button" class="btn btn-inverse-info btn-icon" onclick="window.location='{{route('project.edit',$project->id)}}'"><i class="mdi mdi-pencil"></i></button>
                                                     <div class="modal fade" id="delete_modal_{{$project->id}}" role="dialog">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">

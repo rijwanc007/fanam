@@ -177,6 +177,17 @@ class EmployeeController extends Controller
         unlink('assets/images/employees/'.$employee->photo);
         unlink('assets/images/employees/cv/'.$employee->cv);
         $employee->delete();
+        Session::flash('success', 'Employee profile Deleted succesfully');
         return redirect()->route('employee.index');
+    }
+    public function accounts(Request $request)
+    {
+        $explode = explode('-',$request->month);
+        $month = $explode[1];
+        $year = $explode[0];
+        $employee = Employee::find($request->id);
+        $account = Account::where('eid', $request->id)->where('month', $month)->where('year', $year)->first();
+        return view('employee.show', compact('account', 'employee'));
+
     }
 }

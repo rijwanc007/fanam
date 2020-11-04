@@ -50,11 +50,11 @@ class ProjectController extends Controller
                 'status'=>$status,
             ]);
             Session::flash('success', 'Project Created Successfully');
-            return redirect()->back();
+            return redirect()->route('project.index');
         }
         else{
             Session::flash('error', 'Project is already created at same location');
-            return redirect()->back();
+            return redirect()->route('project.index');
         }
     }
 
@@ -80,7 +80,8 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+//        $project = Project::find($id);
+//        return view('project.edit', compact('project'));
     }
 
     /**
@@ -103,6 +104,8 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Project::find($id)->delete();
+        Session::flash('success', 'Project Deleted Successfully');
+        return redirect()->back();
     }
 }

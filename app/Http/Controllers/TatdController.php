@@ -55,7 +55,7 @@ class TatdController extends Controller
                 }
                 else{
                     Account::create([
-                        'eid'=>$request->id,
+                        'eid'=>$request->eid,
                         'month' => $month,
                         'year' => $year,
                         'salary' => $request->salary,
@@ -118,7 +118,7 @@ class TatdController extends Controller
         $year = $explode[0];
         $employee = Employee::find($request->id);
         if($year > $employee->created_at->format('yy') || ($year == $employee->created_at->format('yy') && $month >= $employee->created_at->format('m'))){
-               $ta_td_s = Account::where('eid',$request->id)->where('year',$year)->where('month',$month)->first();
+            $ta_td_s = Account::where('eid',$request->id)->where('year',$year)->where('month',$month)->first();
                $grade = Grade::where('grade', $employee->grade)->first();
                $total = $employee->salary + $employee->commision;
                $check = 1;

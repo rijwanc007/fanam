@@ -44,7 +44,7 @@
 
     @if(!empty($check))
     <div class="row">
-        @if($ta_td_s == null)
+        @if(!empty($ta_td_s))
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
