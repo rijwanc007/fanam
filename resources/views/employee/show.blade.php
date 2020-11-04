@@ -65,16 +65,19 @@
                                     </thead>
                                     <tbody>
                                             <tr class="text-center">
-                                                <td>{{$account->salary}}</td>
+                                                <td>{{$account->salary}}/-</td>
                                                 <td>
                                                     @if(empty($account->commission))
                                                     <button type="button" class="btn btn-danger btn-block">Employee have not sold any plot in {{$account->month}}/{{$account->year}}</button>
                                                     @else
-                                                    {{$account->commission}}
+                                                    {{$account->commission}}/-
                                                     @endif
                                                 </td>
-                                                <td>{{$account->tatd}}</td>
+                                                <td>{{$account->tatd}}/-</td>
                                             </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-center">Total Amount : {{$account->salary + $account->commission + $account->tatd}}/-</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
